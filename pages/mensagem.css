@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* azul royal vibe */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    color: #e0f7ff;
+}
+
+h1 {
+    text-align: center;
+    color: #00c6ff;
+}
+
+.motivo {
+    background: rgba(255,255,255,0.95);
+    color: #003049;
+    padding: 12px;
+    margin: 6px;
+    border-radius: 12px;
+    animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}

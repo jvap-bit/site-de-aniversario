@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa ✨</title>
+    <link rel="stylesheet" href="paginaSurpresa.css">
+</head>
+<body>
+
+    <div class="centro">
+        <h1>O mundo diz:<br>Eu te amo!</h1>
+    </div>
+
+    <a href="index.html" class="btn-voltar">← Voltar</a>
+
+    <script>
+        const idiomas = [
+            "Eu te amo", "I love you", "Je t'aime", "Te amo", "Ti amo", "Ich liebe dich", "愛してる", "사랑해", "我爱你", "Nakupenda", "Mahal kita", "Jag älskar dig", "Jeg elsker deg", "Ik hou van jou", "Σ'αγαπώ", "Szeretlek", "Я тебя люблю", "Miluji tě", "Kocham cię", "Volim te", "Aloha wau ia 'oe", "Ek het jou lief", "Te iubesc", "T'estimo", "Ámote", "Rwy'n dy garu di", "Minä rakastan sinua", "Ma armastan sind", "Es tevi mīlu", "Aš tave myliu", "Я тебе кохаю", "Я цябе кахаю", "Ľúbim ťa", "Ljubim te", "Волим те", "Обичам те", "Те сакам", "Të dua", "Ես քեզ սիրում եմ", "მე შენ miyvarxar", "Мен сені жақсы көремін", "我愛你", "Em yêu anh", "ฉันรักคุณ", "ຂ້ອຍຮັກເຈົ້າ", "Khnhom srolanh neak", "Aku cinta kamu", "Saya sayang awak", "Gihigugma ko ikaw", "Min go chit de", "أنا أحبك", "אני אוהב אותך", "دوستت دارم", "Seni seviyorum", "Mən səni sevirəm", "Min tu fêr kirî", "मैं तुमसे प्यार करता हूँ", "میں تم سے پیار کرتا ہوں", "আমি তোমাকে ভালোবাসি", "ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ", "હું તને પ્રેમ કરું છું", "माझे तुझ्यावर प्रेम आहे", "నేను నిన్ను ప్రేమిస్తున్నాను", "நான் உன்னை காதலிக்கிறேன்", "ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ", "ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു", "මම ඔයාට ආදරෙයි", "म तिमीलाई माया गर्छु", "እወድሃለሁ", "Mo nifẹ rẹ", "Ahụrụ m gị n'anya", "Ngiyakuthanda", "Ndiyakuthanda", "Ke a go rata", "Ndinokuda", "Waad ku jecelahay", "Tiako ianao", "Ka aroha ahau ki a koe", "Ou te alofa ia te oe", "Au domoni iko", "Rohayhu", "Munayki", "Ni mits tlazohtla", "In yaakumech", "Oroayhu", "T'amo", "Ech hunn dech gäär", "Ég elska þig", "Eg elski teg", "Ik hâld fan dy", "Ech hunn dech gär", "Da garout a ran", "Maite zaitut", "Tá grá agam duit", "Tha gaol agam ort", "Mi amas vin", "Inie luv yu", "Volim te", "M'bi fe", "Luv u", "Te quiero", "Amo-te", "S'agapo", "Aishiteru", "Saranghae", "Wo ai ni", "Nakupenda", "Mahal kita", "Jag älskar dig", "Jeg elsker deg", "Ik hou van jou", "Σ'αγαπώ", "Szeretlek", "Я тебя люблю", "Miluji tě", "Kocham cię", "Volim te",
+        ];
+
+        function criarPalavra() {
+            const span = document.createElement("span");
+            span.className = "eu-te-amo";
+
+            span.innerText = idiomas[Math.floor(Math.random() * idiomas.length)];
+            
+            span.style.left = Math.random() * 95 + "vw";
+            
+            const tamanho = Math.random() * (2 - 0.8) + 0.8;
+            span.style.fontSize = tamanho + "rem";
+            
+            const duracao = Math.random() * (25 - 10) + 10;
+            span.style.animationDuration = duracao + "s";
+            
+            span.style.opacity = Math.random() * (0.6 - 0.1) + 0.1;
+
+            document.body.appendChild(span);
+
+            setTimeout(() => {
+                span.remove();
+            }, duracao * 1000);
+        }
+
+        setInterval(criarPalavra, 300);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+:root {
+    --bg-dark: #0a192f;
+    --accent: #1e90ff;
+    --text: #e6f0ff;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #1e3c72 0%, var(--bg-dark) 100%);
+    color: var(--text);
+}
+
+/* CENTRO FIXO */
+.centro {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    background: rgba(10, 25, 47, 0.6);
+    padding: 30px 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(30,144,255,0.3);
+    box-shadow: 0 0 50px rgba(30,144,255,0.3);
+}
+
+/* TÍTULO */
+h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    text-shadow: 0 0 15px var(--accent);
+}
+
+/* PALAVRAS FLUTUANTES */
+.eu-te-amo {
+    position: fixed;
+    white-space: nowrap;
+    color: var(--text);
+    user-select: none;
+    pointer-events: none;
+    animation: flutuar linear infinite;
+}
+
+/* ANIMAÇÃO SUAVE */
+@keyframes flutuar {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* BOTÃO */
+.btn-voltar {
+    position: fixed;
+    bottom: 30px;
+    z-index: 100;
+    text-decoration: none;
+    color: white;
+    background: var(--accent);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(30,144,255,0.5);
+}
+
+.btn-voltar:hover {
+    background: #4da6ff;
+    transform: translateY(-2px);
+}

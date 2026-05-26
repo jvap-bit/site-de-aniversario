@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você 💙</title>
+<link rel="stylesheet" href="mensagem.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Para você 💙</h1>
+    <div id="lista"></div>
+</div>
+
+<audio id="musica" autoplay loop>
+    <source src="Musica desejada.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+const inicio = [
+"Eu te amo porque",
+"Eu te amo pois",
+"Eu te amo de verdade porque",
+"Eu te amo mais a cada dia porque"
+];
+
+const meio = [
+"seu sorriso ilumina tudo",
+"você me faz feliz",
+"você é meu porto seguro",
+"você mudou minha vida",
+"você me entende como ninguém",
+"você me faz sentir especial",
+"você me acalma",
+"você me inspira",
+"você é incrível",
+"você é única",
+"eu amo seu jeitinho",
+"você é minha paz",
+"você é meu mundo",
+"eu amo estar com você",
+"você me faz sorrir sem motivo",
+"você me completa"
+];
+
+const final = [
+"todos os dias 💙",
+"em todos os momentos",
+"mais do que palavras podem explicar",
+"para sempre",
+"infinitamente",
+"com todo meu coração",
+"mais do que tudo"
+];
+
+function gerarMotivo() {
+    const i = inicio[Math.floor(Math.random()*inicio.length)];
+    const m = meio[Math.floor(Math.random()*meio.length)];
+    const f = final[Math.floor(Math.random()*final.length)];
+    return `${i} ${m} ${f}`;
+}
+
+const lista = document.getElementById("lista");
+
+for (let i = 1; i <= 1000; i++) {
+    const div = document.createElement("div");
+    div.className = "motivo";
+    div.innerText = "#" + i + " " + gerarMotivo();
+    lista.appendChild(div);
+}
+
+function criarCoracao() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💙";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(criarCoracao, 250);
+
+</script>
+
+</body>
+</html>
